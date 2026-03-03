@@ -4,16 +4,14 @@ import './Hero.css';
 const Hero = () => {
     return (
         <header className="hero">
-            {/* Google Drive iframe instead of video tag */}
-            <iframe
-                src="https://drive.google.com/file/d/11HvfOQyZ94PSX96wbQ82lkqwq7jVpJE3/view?usp=drive_link"
-                width="100%"
-                height="100%"
-                className="hero-video"
-                title="Toni and Guy Video"
-                allow="autoplay; fullscreen"
-                style={{ border: 'none' }}
-            ></iframe>
+            {/* Google Drive video using direct API view URL so it autoplays properly in the background */}
+            <video autoPlay loop muted playsInline className="hero-video">
+                <source
+                    src="https://drive.google.com/uc?export=view&id=11HvfOQyZ94PSX96wbQ82lkqwq7jVpJE3"
+                    type="video/mp4"
+                />
+                Your browser does not support the video tag.
+            </video>
             <div className="hero-overlay"></div>
             <div className="container hero-content animate-fade-in">
                 <h1 className="hero-title">
