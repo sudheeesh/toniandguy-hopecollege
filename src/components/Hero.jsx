@@ -4,10 +4,10 @@ import './Hero.css';
 const Hero = () => {
     return (
         <header className="hero">
-            {/* Google Drive video using direct API view URL so it autoplays properly in the background */}
+            {/* Background Video */}
             <video autoPlay loop muted playsInline className="hero-video">
                 <source
-                    src="https://drive.google.com/uc?export=view&id=11HvfOQyZ94PSX96wbQ82lkqwq7jVpJE3"
+                    src="https://res.cloudinary.com/dpu9ikeqe/video/upload/v1772557043/C0499_a0ylvf.mp4"
                     type="video/mp4"
                 />
                 Your browser does not support the video tag.
