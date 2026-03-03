@@ -1,0 +1,142 @@
+.about-container {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image,
+.about-content {
+    flex: 1;
+}
+
+.about-image {
+    position: relative;
+}
+
+.image-wrapper {
+    padding: 0.5rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.image-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-gold, #c9a84c);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+/* Label above title */
+.about-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-gold, #c9a84c);
+    margin-bottom: 0.75rem !important;
+}
+
+.about-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.about-content h2 .highlight-text {
+    font-size: 1.8rem;
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Highlights list */
+.about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--color-text-secondary, rgba(255, 255, 255, 0.75));
+}
+
+.highlight-icon {
+    color: var(--color-gold, #c9a84c);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* Stats */
+.stats-grid {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    padding: 1.5rem 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+}
+
+.stat h4 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--color-gold, #c9a84c);
+}
+
+.stat p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        gap: 0.8rem;
+    }
+
+    .stat h4 {
+        font-size: 1.8rem;
+    }
+}

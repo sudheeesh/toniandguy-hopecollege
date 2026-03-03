@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  --color-black: #0c0c0c;
+  --color-black-rgb: 12, 12, 12;
+  --color-dark-grey: #1a1a1a;
+  --color-grey: #333333;
+  --color-light-grey: #8a8a8a;
+  --color-off-white: #e0e0e0;
+  --color-white: #ffffff;
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-norm: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-off-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--color-light-grey);
+}
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-light-grey);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Glassmorphism helpers */
+.glass {
+  background: rgba(var(--color-black-rgb), 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card {
+  background: var(--color-dark-grey);
+  border: 1px solid var(--color-grey);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform var(--transition-norm), border-color var(--transition-norm), box-shadow var(--transition-norm);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Layout Utilties */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn-primary:hover {
+  background: var(--color-off-white);
+  transform: scale(1.03);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-grey);
+}
+
+.btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+  transform: scale(1.03);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow) forwards;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
